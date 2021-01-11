@@ -1,0 +1,21 @@
+{
+  "name": "@jota-one/http-client",
+  "version": "0.8.0",
+  "main": "http.js",
+  "module": "http.js",
+  "description": "Axios-based HTTP client",
+  "author": "Juniors at Work",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jota-one/http-client.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "promise.prototype.finally": "^3.1.0",
+    "@jota-one/hateoas-parser": "^1.0.0",
+    "lodash-es": "^4.17.20"
+  },
+  "typings": "./index.d.ts"
+}
