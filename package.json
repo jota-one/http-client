@@ -1,6 +1,6 @@
 {
   "name": "@jota-one/http-client",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": "http.js",
   "module": "http.js",
   "description": "Axios-based HTTP client",

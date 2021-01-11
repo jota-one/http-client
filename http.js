@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import AxiosFinally from 'promise.prototype.finally'
-import { parseLinks, getEndpoint as ge } from '@infocentric/hateoas-parser'
+import { parseLinks, getEndpoint as ge } from '@jota-one/hateoas-parser'
 import { concat, uniq, isObject, toPairs, isFunction } from 'lodash-es'
 
 const openBlob = function (blob, filename, forceDownload) {
