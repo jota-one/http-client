@@ -29,16 +29,16 @@ export interface HttpClientInstance {
   create(config: AxiosRequestConfig): ExtendedAxiosInstance;
 }
 
-export interface HateoasHttpClientInstance {
+export interface HateoasInstance {
   create(config: AxiosRequestConfig): HateoasAxiosInstance;
 }
 
-declare const HttpClient: HttpClientInstance;
-declare const HateoasHttpClient: HateoasHttpClientInstance;
+declare const http: HttpClientInstance;
+declare const hateoas: HateoasInstance;
 
 export {
-  HttpClient,
-  HateoasHttpClient
+  http,
+  hateoas
 }
 
-export default HttpClient;
+export default http;

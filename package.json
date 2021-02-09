@@ -1,8 +1,8 @@
 {
   "name": "@jota-one/http-client",
-  "version": "0.8.1",
-  "main": "http.js",
-  "module": "http.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "index.js",
   "description": "Axios-based HTTP client",
   "author": "Juniors at Work",
   "contributors": [],
