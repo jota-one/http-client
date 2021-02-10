@@ -4,9 +4,20 @@ declare type cachebusterConfig = {
   callback: Function,
   methods: string[]
 }
+export interface responseProcessorFunction {
+  (result: object, axiosOptions: AxiosRequestConfig)
+}
 
 export type extendedAxiosConfig = {
   cachebuster: cachebusterConfig
+}
+
+export type hateoasExtendedConfig = {
+  axiosConfig: extendedAxiosConfig
+  rootEndpoint: string
+  enableLogging: boolean
+  disableCache: boolean
+  responseProcessors: responseProcessorFunction[]
 }
 
 export interface ExtendedAxiosInstance extends AxiosInstance {
@@ -25,20 +36,26 @@ export interface HateoasAxiosInstance extends ExtendedAxiosInstance {
   loadVersionedIndex():Promise<any>
 }
 
-export interface HttpClientInstance {
-  create(config: AxiosRequestConfig): ExtendedAxiosInstance;
+export interface HateoasExtended {
+  get():Promise<any>
+  post():Promise<any>
+  put():Promise<any>
+  delete():Promise<any>
+  follow():Promise<any>
 }
 
-export interface HateoasInstance {
-  create(config: AxiosRequestConfig): HateoasAxiosInstance;
-}
-
-declare const http: HttpClientInstance;
-declare const hateoas: HateoasInstance;
+declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
+declare function hateoas(config: AxiosRequestConfig): HateoasAxiosInstance;
+declare function extended(config: hateoasExtendedConfig): HateoasExtended;
+declare function use(client: HateoasExtended, mixin: Function): void;
+declare function registerMixin(name: string, mixin: Function): void;
 
 export {
   http,
-  hateoas
+  hateoas,
+  extended,
+  use,
+  registerMixin
 }
 
 export default http;
