@@ -8,10 +8,4 @@ export {
   use,
   registerMixin
 }
-export default {
-  http,
-  hateoas,
-  extended,
-  use,
-  registerMixin
-}
+export default http

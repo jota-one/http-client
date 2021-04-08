@@ -58,4 +58,4 @@ export {
   registerMixin
 }
 
-export default http;
+export default http
