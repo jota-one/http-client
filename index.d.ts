@@ -13,11 +13,11 @@ export type extendedAxiosConfig = {
 }
 
 export type hateoasExtendedConfig = {
-  axiosConfig: extendedAxiosConfig
-  rootEndpoint: string
-  enableLogging: boolean
-  disableCache: boolean
-  responseProcessors: responseProcessorFunction[]
+  axiosConfig?: extendedAxiosConfig
+  rootEndpoint?: string
+  enableLogging?: boolean
+  disableCache?: boolean
+  responseProcessors?: responseProcessorFunction[]
 }
 
 export interface ExtendedAxiosInstance extends AxiosInstance {
@@ -37,11 +37,11 @@ export interface HateoasAxiosInstance extends ExtendedAxiosInstance {
 }
 
 export interface HateoasExtended {
-  get():Promise<any>
-  post():Promise<any>
-  put():Promise<any>
-  delete():Promise<any>
-  follow():Promise<any>
+  get(hpath: string, params?: object, axiosOptions?: object, suffixes?: string[]):Promise<any>
+  post(resource: object|string, rel: string, payload?: object, axiosOptions?: object, urlPlaceholders?: object):Promise<any>
+  put(resource: object|string, rel: string, payload?: object, axiosOptions?: object, urlPlaceholders?: object):Promise<any>
+  delete(hpath: string, params?: object, axiosOptions?: object):Promise<any>
+  follow(resource: object, rel: string, params?: object, axiosOptions?: object, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
 }
 
 declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
