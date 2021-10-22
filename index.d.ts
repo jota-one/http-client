@@ -15,6 +15,7 @@ export type extendedAxiosConfig = {
 export type hateoasExtendedConfig = {
   axiosConfig?: extendedAxiosConfig
   rootEndpoint?: string
+  rootIndexLinksPath?: string
   enableLogging?: boolean
   disableCache?: boolean
   responseProcessors?: responseProcessorFunction[]
