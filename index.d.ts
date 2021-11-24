@@ -31,18 +31,18 @@ export interface ExtendedAxiosInstance extends AxiosInstance {
 }
 
 export interface HateoasAxiosInstance extends ExtendedAxiosInstance {
-  loadIndex():Promise<any>
-  getRelEndpoint():Promise<any>
-  followLink():Promise<any>
-  loadVersionedIndex():Promise<any>
+  loadIndex(endpoint: string):Promise<any>
+  resolveUri(resource: object, rel: string, params?: object):string
+  getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
+  followLink(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
 }
 
 export interface HateoasExtended {
-  get(hpath: string, params?: object, axiosOptions?: object, suffixes?: string[]):Promise<any>
-  post(resource: object|string, rel: string, payload?: object, axiosOptions?: object, urlPlaceholders?: object):Promise<any>
-  put(resource: object|string, rel: string, payload?: object, axiosOptions?: object, urlPlaceholders?: object):Promise<any>
-  delete(hpath: string, params?: object, axiosOptions?: object):Promise<any>
-  follow(resource: object, rel: string, params?: object, axiosOptions?: object, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
+  get(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig, suffixes?: string[]):Promise<any>
+  post(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
+  put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
+  delete(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig):Promise<any>
+  follow(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
 }
 
 declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
