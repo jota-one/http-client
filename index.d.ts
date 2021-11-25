@@ -1,9 +1,11 @@
-import { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { AxiosInstance, AxiosRequestConfig, CancelTokenSource } from 'axios'
 
 declare type cachebusterConfig = {
   callback: Function,
   methods: string[]
 }
+declare type CacheStrategies = 'off' | 'rootIndexOnly' | 'all'
+
 export interface responseProcessorFunction {
   (result: object, axiosOptions: AxiosRequestConfig)
 }
@@ -18,6 +20,7 @@ export type hateoasExtendedConfig = {
   rootIndexLinksPath?: string
   enableLogging?: boolean
   disableCache?: boolean
+  cacheStrategy?: CacheStrategies
   responseProcessors?: responseProcessorFunction[]
 }
 
@@ -38,6 +41,13 @@ export interface HateoasAxiosInstance extends ExtendedAxiosInstance {
 }
 
 export interface HateoasExtended {
+  cacheDisabled:Boolean,
+  axios:HateoasAxiosInstance
+  nocache():HateoasExtended
+  generateCanceller():CancelTokenSource
+  isCancel():Boolean
+  clearCache(path?:string, params?:object):void
+  resetCache():void
   get(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig, suffixes?: string[]):Promise<any>
   post(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
   put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
