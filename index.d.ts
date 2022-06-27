@@ -15,7 +15,7 @@ export type extendedAxiosConfig = {
 }
 
 export type hateoasExtendedConfig = {
-  axiosConfig?: extendedAxiosConfig
+  axiosConfig?: AxiosRequestConfig
   rootEndpoint?: string | Record<string, unknown>
   rootIndexLinksPath?: string
   enableLogging?: boolean
@@ -25,7 +25,6 @@ export type hateoasExtendedConfig = {
 }
 
 export interface ExtendedAxiosInstance extends AxiosInstance {
-  config: extendedAxiosConfig
   setCacheBuster(callback: Function|null, methods?: string[]):void
   removeCacheBuster():void
   getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
