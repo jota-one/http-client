@@ -12,9 +12,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
     "@jota-one/hateoas-parser": "^1.2.0",
+    "axios": "^0.27.2",
     "lodash-es": "^4.17.21"
   },
-  "typings": "./index.d.ts"
+  "typings": "./index.d.ts",
+  "devDependencies": {
+    "axios-mock-adapter": "^1.21.2",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
+  }
 }
