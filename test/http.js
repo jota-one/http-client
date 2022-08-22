@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeAll, afterEach } from 'vitest'
 import http, { hateoas } from '../lib/http'
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 import MockAdapter from "axios-mock-adapter"
 
 
@@ -33,19 +33,19 @@ describe('ExtendedAxios', () => {
       { id: 1, name: "John" },
       { id: 2, name: "Andrew" },
     ]
-    mock.onGet('http://some.site/users').reply(200, users);
+    mock.onGet('http://some.site/users').reply(200, users)
 
     // when
     const result = await client.getEndpoint('http://some.site/users')
 
     // then
-    expect(mock.history.get[0].params).toEqual({t: 'randomly-generated-string' });
-    expect(result).toEqual(users);
+    expect(mock.history.get[0].params).toEqual({t: 'randomly-generated-string' })
+    expect(result).toEqual(users)
   })
 
   it('is still an Axios instance', () => {
     const client = http()
-    console.log(client instanceof Axios)
+    expect(client.create).toBeDefined()
   })
 })
 
@@ -65,6 +65,6 @@ describe('HateoasAxios', () => {
 
   it('is still an Axios instance', () => {
     const client = hateoas()
-    console.log(client instanceof Axios)
+    expect(client.create).toBeDefined()
   })
 })
