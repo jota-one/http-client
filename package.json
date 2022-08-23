@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "@jota-one/hateoas-parser": "^1.2.0",
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "mergician": "^1.0.3"
   },
   "typings": "./index.d.ts",
   "devDependencies": {
