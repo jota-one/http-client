@@ -16,6 +16,7 @@ export type extendedAxiosConfig = {
 
 export type hateoasExtendedConfig = {
   axiosConfig?: AxiosRequestConfig
+  axiosConfigCb?: () => Promise<AxiosRequestConfig>
   rootEndpoint?: string | Record<string, unknown>
   rootIndexLinksPath?: string
   allowedLinksProperties?: string[]
