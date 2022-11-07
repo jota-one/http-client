@@ -31,14 +31,19 @@ export interface ExtendedAxiosInstance extends AxiosInstance {
   removeCacheBuster():void
   getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
   downloadBinary(url: string, config?: AxiosRequestConfig, name?: string):Promise<any>
-  openBinary(url: string, config?: AxiosRequestConfig, name?: string):Promise<any>
+  openBinary(url: string, config?: AxiosRequestConfig, name?: string, forceDownload?: boolean):Promise<any>
 }
 
-export interface HateoasAxiosInstance extends ExtendedAxiosInstance {
+export interface HateoasAxiosInstance {
+  setCacheBuster(callback: Function|null, methods?: string[]):void
+  removeCacheBuster():void
+  getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
   loadIndex(endpoint: string):Promise<any>
   resolveUri(resource: object, rel: string, params?: object):string
   getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
   followLink(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
+  openBinary(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string, forceDownload?: boolean):Promise<any>
+  downloadBinary(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string):Promise<any>
 }
 
 export interface HateoasExtended {
