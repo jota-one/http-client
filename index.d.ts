@@ -42,8 +42,8 @@ export interface HateoasAxiosInstance {
   resolveUri(resource: object, rel: string, params?: object):string
   getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
   followLink(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
-  openBinary(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string, forceDownload?: boolean):Promise<any>
-  downloadBinary(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string):Promise<any>
+  openBinary(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string, forceDownload?: boolean):Promise<any>
+  downloadBinary(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string):Promise<any>
 }
 
 export interface HateoasExtended {
