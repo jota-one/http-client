@@ -42,7 +42,6 @@ export interface HateoasAxiosInstance {
   resolveUri(resource: object, rel: string, params?: object):string
   getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
   followLink(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
-  openBinary(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string, forceDownload?: boolean):Promise<any>
   downloadBinary(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string):Promise<any>
 }
 
@@ -59,6 +58,7 @@ export interface HateoasExtended {
   put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
   delete(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig):Promise<any>
   follow(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
+  download(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, filename?: string):Promise<any>
 }
 
 declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
