@@ -1,10 +1,11 @@
 import { AxiosInstance, AxiosRequestConfig, CancelTokenSource } from 'axios'
 
-declare type cachebusterConfig = {
+export type cachebusterConfig = {
   callback: Function,
   methods: string[]
 }
-declare type CacheStrategies = 'off' | 'rootIndexOnly' | 'all'
+
+export type CacheStrategies = 'off' | 'rootIndexOnly' | 'all'
 
 export interface responseProcessorFunction {
   (result: object, axiosOptions: AxiosRequestConfig)
@@ -24,6 +25,7 @@ export type hateoasExtendedConfig = {
   disableCache?: boolean
   cacheStrategy?: CacheStrategies
   responseProcessors?: responseProcessorFunction[]
+  withVerbsRestrictions?: boolean
 }
 
 export interface ExtendedAxiosInstance extends AxiosInstance {
