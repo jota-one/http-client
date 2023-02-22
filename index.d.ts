@@ -58,7 +58,7 @@ export interface HateoasExtended {
   get(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig, suffixes?: string[]):Promise<any>
   post(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
   put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
-  delete(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig):Promise<any>
+  delete(resource: object|string, rel: string, params?: object):Promise<any>
   follow(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
   download(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, filename?: string):Promise<any>
 }
