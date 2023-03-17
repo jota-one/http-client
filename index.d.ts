@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosRequestConfig, CancelTokenSource } from 'axios'
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse, CancelTokenSource} from 'axios'
 
 export type cachebusterConfig = {
   callback: Function,
@@ -8,7 +8,7 @@ export type cachebusterConfig = {
 export type CacheStrategies = 'off' | 'rootIndexOnly' | 'all'
 
 export interface responseProcessorFunction {
-  (result: object, axiosOptions: AxiosRequestConfig)
+  (result: AxiosResponse, axiosOptions: AxiosRequestConfig)
 }
 
 export type extendedAxiosConfig = {
