@@ -3,11 +3,11 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
       - next
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   autorelease:
