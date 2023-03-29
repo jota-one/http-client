@@ -1,3 +1,16 @@
+# v1.3.0 (Wed Mar 29 2023)
+
+#### 🚀 Enhancement
+
+- allow string or empty string as resource in download method [#8](https://github.com/jota-one/http-client/pull/8) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.2.0 (Fri Mar 17 2023)
 
 #### 🚀 Enhancement
