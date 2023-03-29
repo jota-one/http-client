@@ -60,7 +60,7 @@ export interface HateoasExtended {
   put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
   delete(resource: object|string, rel: string, params?: object):Promise<any>
   follow(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, cachePrefixes?: string[], cacheSuffixes?: string[]):Promise<any>
-  download(resource: object, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, filename?: string):Promise<any>
+  download(resource: object|string, rel: string, params?: object, axiosOptions?: AxiosRequestConfig, filename?: string):Promise<any>
 }
 
 declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
