@@ -1,3 +1,16 @@
+# v1.4.1 (Thu Mar 30 2023)
+
+#### 🐛 Bug Fix
+
+- fix exports target file for esm [#10](https://github.com/jota-one/http-client/pull/10) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.4.0 (Thu Mar 30 2023)
 
 #### 🚀 Enhancement
