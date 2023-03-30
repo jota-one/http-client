@@ -3,12 +3,20 @@
   "version": "1.3.0",
   "type": "module",
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "files": [
     "dist/*",
-    "index.d.ts"
+    "lib/*",
+    "index.d.ts",
+    "index.js"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "description": "Axios-based HTTP client",
   "scripts": {
     "build": "node build.cjs",
