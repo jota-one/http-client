@@ -1,3 +1,16 @@
+# v1.4.0 (Thu Mar 30 2023)
+
+#### 🚀 Enhancement
+
+- export unbuilt code to fix a weird issue on FormData usage [#9](https://github.com/jota-one/http-client/pull/9) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.3.0 (Wed Mar 29 2023)
 
 #### 🚀 Enhancement
