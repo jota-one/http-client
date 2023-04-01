@@ -1,5 +1,5 @@
-import { http, hateoas } from './lib/http'
-import extended, { use, registerMixin } from './lib/extended'
+import { http, hateoas } from './lib/http.js'
+import extended, { use, registerMixin } from './lib/extended.js'
 
 export {
   http,
