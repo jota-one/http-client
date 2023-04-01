@@ -1,3 +1,16 @@
+# v1.4.2 (Sat Apr 01 2023)
+
+#### 🐛 Bug Fix
+
+- chore: updated hateoas-parser dep + other dev deps + attempts to make… [#11](https://github.com/jota-one/http-client/pull/11) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.4.1 (Thu Mar 30 2023)
 
 #### 🐛 Bug Fix
