@@ -1,3 +1,16 @@
+# v1.4.3 (Mon Jun 05 2023)
+
+#### 🐛 Bug Fix
+
+- fix: types improvement [#12](https://github.com/jota-one/http-client/pull/12) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.4.2 (Sat Apr 01 2023)
 
 #### 🐛 Bug Fix
