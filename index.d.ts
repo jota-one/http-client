@@ -36,7 +36,7 @@ export interface ExtendedAxiosInstance extends AxiosInstance {
   openBinary(url: string, config?: AxiosRequestConfig, name?: string, forceDownload?: boolean):Promise<any>
 }
 
-export interface HateoasAxiosInstance {
+export interface HateoasAxiosInstance extends AxiosInstance {
   setCacheBuster(callback: Function|null, methods?: string[]):void
   removeCacheBuster():void
   getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
@@ -66,7 +66,7 @@ export interface HateoasExtended {
 declare function http(config: AxiosRequestConfig): ExtendedAxiosInstance;
 declare function hateoas(config: AxiosRequestConfig): HateoasAxiosInstance;
 declare function extended(config: hateoasExtendedConfig): HateoasExtended;
-declare function use(client: HateoasExtended, mixin: Function): void;
+declare function use(client: HateoasExtended, mixin: Function | string): void;
 declare function registerMixin(name: string, mixin: Function): void;
 
 export {
