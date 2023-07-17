@@ -1,4 +1,4 @@
-import {AxiosInstance, AxiosRequestConfig, AxiosResponse, CancelTokenSource} from 'axios'
+import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 
 export type cachebusterConfig = {
   callback: Function,
@@ -51,7 +51,7 @@ export interface HateoasExtended {
   cacheDisabled:Boolean,
   axios:HateoasAxiosInstance
   nocache():HateoasExtended
-  generateCanceller():CancelTokenSource
+  generateCanceller():AbortController
   isCancel():Boolean
   clearCache(path?:string, params?:object):void
   resetCache():void

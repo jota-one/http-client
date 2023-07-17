@@ -28,13 +28,13 @@ describe('extended', () => {
         }]
       }
     })
-    mock.onGet('http://some.site/users').reply(200, { users: true })
-    mock.onGet('http://some.site/things').reply(200, { things: true })
+    mock.onGet('http://some.site/users').reply(200, {users: true})
+    mock.onGet('http://some.site/things').reply(200, {things: true})
 
     const result = await client.get('users')
 
     expect(mock.history.get[0].url).toEqual('http://some.site/users')
-    expect(result).toEqual({ users: true })
+    expect(result).toEqual({users: true})
   })
 
   it('caches get requests depending on path', async () => {
@@ -49,9 +49,9 @@ describe('extended', () => {
         }]
       }
     })
-    mock.onGet('http://some.site/users').reply(200, { users: true })
-    mock.onGet('http://some.site/users/22').reply(200, { user: 22 })
-    mock.onGet('http://some.site/things').reply(200, { things: true })
+    mock.onGet('http://some.site/users').reply(200, {users: true})
+    mock.onGet('http://some.site/users/22').reply(200, {user: 22})
+    mock.onGet('http://some.site/things').reply(200, {things: true})
 
     const result = await client.get('users')
     const cache = client.getCache()
@@ -59,10 +59,44 @@ describe('extended', () => {
 
     expect(cached).toEqual(result)
 
-    const user = await client.get('user', { id: 22})
+    const user = await client.get('user', {id: 22})
     const cachedUser = await cache.user['{"id":22}']
 
-    expect(user).toEqual({ user: 22 })
+    expect(user).toEqual({user: 22})
     expect(cachedUser).toEqual(user)
+  })
+})
+
+describe('extended-abort', () => {
+  let mock
+
+  beforeAll(() => {
+    mock = new MockAdapter(axios, { delayResponse: 5000 })
+  })
+
+  afterEach(() => {
+    mock.reset()
+  })
+
+  it('cancels request after a defined amount of time', async () => {
+    const client = extended({
+      rootEndpoint: {
+        links: [{
+          rel: 'users',
+          href: 'http://some.site/users',
+        }]
+      }
+    })
+    const canceller = client.generateCanceller()
+    mock.onGet('http://some.site/users').reply(200, { users: true })
+
+    const getUsers = () => client.get('users', {}, {signal: canceller.signal})
+    setTimeout(() => {
+      canceller.abort()
+    }, 1000)
+
+    // expect(canceller.signal.aborted).toBe(true)
+    // expect(await getUsers()).toEqual({users: true})
+    expect(() => getUsers()).rejects.toThrowError(/pute/)
   })
 })
