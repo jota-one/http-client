@@ -52,7 +52,7 @@ export interface HateoasExtended {
   axios:HateoasAxiosInstance
   nocache():HateoasExtended
   generateCanceller():AbortController
-  isCancel():Boolean
+  isCancel(e: object):Boolean
   clearCache(path?:string, params?:object):void
   resetCache():void
   get(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig, suffixes?: string[]):Promise<any>
