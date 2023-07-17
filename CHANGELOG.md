@@ -1,3 +1,16 @@
+# v1.5.0 (Mon Jul 17 2023)
+
+#### 🚀 Enhancement
+
+- fix: adapt the cancel mechanism to the AbortController [#13](https://github.com/jota-one/http-client/pull/13) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.4.3 (Mon Jun 05 2023)
 
 #### 🐛 Bug Fix
