@@ -1,3 +1,16 @@
+# v1.5.1 (Fri Jul 21 2023)
+
+#### 🐛 Bug Fix
+
+- Develop [#14](https://github.com/jota-one/http-client/pull/14) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.5.0 (Mon Jul 17 2023)
 
 #### 🚀 Enhancement
