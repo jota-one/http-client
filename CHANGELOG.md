@@ -1,3 +1,16 @@
+# v1.6.0 (Wed Sep 20 2023)
+
+#### 🚀 Enhancement
+
+- download methods improvements [#15](https://github.com/jota-one/http-client/pull/15) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.5.1 (Fri Jul 21 2023)
 
 #### 🐛 Bug Fix
