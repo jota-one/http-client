@@ -65,6 +65,23 @@ describe('ExtendedAxios', () => {
     expect(result).toBe(filename)
   })
 
+  it('should support any letter case for content-DisPOsiTion', async () => {
+    const client = http()
+
+    // generate a blob content
+    const url = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+    const blob = await fetch(url)
+      .then(res => res.blob())
+
+    const filename = 'tépien-pon-c-fussi.png'
+    mock.onGet('https://download.com/myfile').reply(200, blob, {
+      'content-DisPOsiTion': `attachment; filename="${filename}"`
+    })
+
+    const result = await client.downloadBinary('https://download.com/myfile')
+    expect(result).toBe(filename)
+  })
+
   it('should use the provided filename if provided', async () => {
     const client = http()
 
