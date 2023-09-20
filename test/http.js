@@ -117,7 +117,7 @@ describe('ExtendedAxios', () => {
     mock.onGet('https://download.com/myfile').reply(200, blob)
 
     const result = client.downloadBinary('https://download.com/myfile')
-    expect(result).rejects.toThrow('No filename has been found neither in the frontend call or in the Content-Disposition header.')
+    await expect(result).rejects.toThrow('No filename has been found neither in the frontend call or in the Content-Disposition header.')
   })
 
   it('should throw in case of absence of frontend filename and backend Content-Disposition without filename', async () => {
@@ -133,7 +133,7 @@ describe('ExtendedAxios', () => {
     })
 
     const result = client.downloadBinary('https://download.com/myfile')
-    expect(result).rejects.toThrow('No')
+    await expect(result).rejects.toThrow('No filename has been found neither in the frontend call or in the Content-Disposition header.')
   })
 })
 
