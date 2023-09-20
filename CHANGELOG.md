@@ -1,3 +1,16 @@
+# v1.6.1 (Wed Sep 20 2023)
+
+#### 🐛 Bug Fix
+
+- feat: support for case insensitive http headers [#16](https://github.com/jota-one/http-client/pull/16) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.6.0 (Wed Sep 20 2023)
 
 #### 🚀 Enhancement
