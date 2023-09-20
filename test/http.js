@@ -85,7 +85,6 @@ describe('ExtendedAxios', () => {
   it('should handle JSON error response when downloading a file', async () => {
     const client = http()
 
-
     const filename = 'filename-from-frontend.png'
     mock.onGet('https://download.com/myfile').reply(500, { error: true }, {
       'Content-Disposition': `attachment; filename="filename-from-backend.png"`
@@ -98,7 +97,6 @@ describe('ExtendedAxios', () => {
   it('should handle JSON weird error responses with success status when trying to download a file', async () => {
     const client = http()
 
-
     const filename = 'filename-from-frontend.png'
     mock.onGet('https://download.com/myfile').reply(200, { error: true }, {
       'Content-Disposition': `attachment; filename="filename-from-backend.png"`
@@ -106,6 +104,36 @@ describe('ExtendedAxios', () => {
 
     const result = client.downloadBinary('https://download.com/myfile', {}, filename)
     await expect(result).resolves.toEqual({ error: true })
+  })
+
+  it('should throw in case of absence of frontend filename and backend Content-Disposition header', async () => {
+    const client = http()
+
+    // generate a blob content
+    const url = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+    const blob = await fetch(url)
+      .then(res => res.blob())
+
+    mock.onGet('https://download.com/myfile').reply(200, blob)
+
+    const result = client.downloadBinary('https://download.com/myfile')
+    expect(result).rejects.toThrow('No filename has been found neither in the frontend call or in the Content-Disposition header.')
+  })
+
+  it('should throw in case of absence of frontend filename and backend Content-Disposition without filename', async () => {
+    const client = http()
+
+    // generate a blob content
+    const url = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+    const blob = await fetch(url)
+      .then(res => res.blob())
+
+    mock.onGet('https://download.com/myfile').reply(200, blob, {
+      'Content-Disposition': 'attachment'
+    })
+
+    const result = client.downloadBinary('https://download.com/myfile')
+    expect(result).rejects.toThrow('No')
   })
 })
 
