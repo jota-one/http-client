@@ -1,4 +1,4 @@
-import {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
+import {AxiosInstance, AxiosRequestConfig} from 'axios'
 
 export type cachebusterConfig = {
   callback: Function,
@@ -8,7 +8,7 @@ export type cachebusterConfig = {
 export type CacheStrategies = 'off' | 'rootIndexOnly' | 'all'
 
 export interface responseProcessorFunction {
-  (result: AxiosResponse, axiosOptions: AxiosRequestConfig)
+  (result: unknown, axiosOptions: AxiosRequestConfig)
 }
 
 export type extendedAxiosConfig = {
@@ -31,7 +31,7 @@ export type hateoasExtendedConfig = {
 export interface ExtendedAxiosInstance extends AxiosInstance {
   setCacheBuster(callback: Function|null, methods?: string[]):void
   removeCacheBuster():void
-  getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
+  getEndpoint(url: string, config?: AxiosRequestConfig, fullResponse?: boolean):Promise<any>
   downloadBinary(url: string, config?: AxiosRequestConfig, name?: string):Promise<any>
   openBinary(url: string, config?: AxiosRequestConfig, name?: string, forceDownload?: boolean):Promise<any>
 }
@@ -39,10 +39,10 @@ export interface ExtendedAxiosInstance extends AxiosInstance {
 export interface HateoasAxiosInstance extends AxiosInstance {
   setCacheBuster(callback: Function|null, methods?: string[]):void
   removeCacheBuster():void
-  getEndpoint(url: string, config?: AxiosRequestConfig):Promise<any>
+  getEndpoint(url: string, config?: AxiosRequestConfig, fullResponse?: boolean):Promise<any>
   loadIndex(endpoint: string):Promise<any>
   resolveUri(resource: object, rel: string, params?: object):string
-  getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
+  getRelEndpoint(index: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, fullResponse?: boolean):Promise<any>
   followLink(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig):Promise<any>
   downloadBinary(resource: object, rel: string, params?: object, axiosConfig?: AxiosRequestConfig, filename?: string):Promise<any>
 }
