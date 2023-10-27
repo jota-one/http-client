@@ -1,3 +1,16 @@
+# v1.6.2 (Fri Oct 27 2023)
+
+#### 🐛 Bug Fix
+
+- feat: fix typing issues [#17](https://github.com/jota-one/http-client/pull/17) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.6.1 (Wed Sep 20 2023)
 
 #### 🐛 Bug Fix
