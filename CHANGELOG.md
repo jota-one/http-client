@@ -1,3 +1,55 @@
+# v1.6.2 (Fri Oct 27 2023)
+
+#### 🐛 Bug Fix
+
+- feat: fix typing issues [#17](https://github.com/jota-one/http-client/pull/17) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
+# v1.6.1 (Wed Sep 20 2023)
+
+#### 🐛 Bug Fix
+
+- feat: support for case insensitive http headers [#16](https://github.com/jota-one/http-client/pull/16) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
+# v1.6.0 (Wed Sep 20 2023)
+
+#### 🚀 Enhancement
+
+- download methods improvements [#15](https://github.com/jota-one/http-client/pull/15) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
+# v1.5.1 (Fri Jul 21 2023)
+
+#### 🐛 Bug Fix
+
+- Develop [#14](https://github.com/jota-one/http-client/pull/14) (joel@jota.one [@jorinho](https://github.com/jorinho))
+
+#### Authors: 2
+
+- Joel Poulin (joel@jota.one)
+- Jorinho ([@jorinho](https://github.com/jorinho))
+
+---
+
 # v1.5.0 (Mon Jul 17 2023)
 
 #### 🚀 Enhancement
