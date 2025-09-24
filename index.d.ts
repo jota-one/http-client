@@ -55,6 +55,7 @@ export interface HateoasExtended {
   isCancel(e: object):Boolean
   clearCache(path?:string, params?:object):void
   resetCache():void
+  getRootIndex():Promise<any>
   get(hpath: string, params?: object, axiosOptions?: AxiosRequestConfig, suffixes?: string[]):Promise<any>
   post(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
   put(resource: object|string, rel: string, payload?: object, axiosOptions?: AxiosRequestConfig, urlPlaceholders?: object):Promise<any>
